@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int count = 0;
+int c = 0;
 
 int main() {
-    printf("Chamada número %d da função main()\n", ++count);
+    printf("Chamada nÃºmero %d da funÃ§Ã£o main()\n", ++c);
 
-    if (count < 5) {
-        main();  // Chamada recursiva
+    if (c < 5) {
+        main();  
     }
     
     getchar();
