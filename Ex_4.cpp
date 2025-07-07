@@ -2,55 +2,54 @@
 #include <stdlib.h>
 
 int main() {
-    int *array;
-    int tamanho, i;
+    int *a;
+    int tam, j;
 
-    // Solicita o tamanho do array
+
     printf("Digite o tamanho do array: ");
-    scanf("%d", &tamanho);
+    scanf("%d", &tam);
 
-    // Alocação dinâmica de memória
-    array = (int *)malloc(tamanho * sizeof(int));
+    // AlocaÃ§Ã£o dinÃ¢mica de memÃ³ria
+    a = (int *)malloc(tam * sizeof(int));
 
-    // Verifica se a alocação foi bem-sucedida
-    if (array == NULL) {
-        printf("Erro ao alocar memória!\n");
+    // Verifica se a alocaÃ§Ã£o foi bem-sucedida
+    if (a == NULL) {
+        printf("Erro ao alocar memÃ³ria!\n");
         return 1;
     }
 
     // Leitura dos elementos do array
-    printf("Digite %d elementos:\n", tamanho);
-    for (i = 0; i < tamanho; i++) {
-        printf("Elemento %d: ", i);
-        scanf("%d", &array[i]);
+    printf("Digite %d elementos:\n", tam);
+    for (j = 0; j < tamanho; j++) {
+        printf("Elemento %d: ", j);
+        scanf("%d", &a[j]);
     }
 
     // Imprime os elementos do array
     printf("\nArray original:\n");
-    for (i = 0; i < tamanho; i++) {
-        printf("%d ", array[i]);
+    for (j = 0; j < tam; j++) {
+        printf("%d ", a[j]);
     }
     printf("\n");
 
-    // Realocação para metade do tamanho
-    int novo_tamanho = tamanho / 2;
-    array = (int *)realloc(array, novo_tamanho * sizeof(int));
+    // RealocaÃ§Ã£o para metade do tamanho
+    int novo_tam = tam / 2;
+    a = (int *)realloc(a, novo_tam * sizeof(int));
 
-    // Verifica se a realocação foi bem-sucedida
-    if (array == NULL) {
-        printf("Erro ao realocar memória!\n");
+    // Verifica se a realocaÃ§Ã£o foi bem-sucedida
+    if (a == NULL) {
+        printf("Erro ao realocar memÃ³ria!\n");
         return 1;
     }
 
     // Imprime os elementos restantes do array
-    printf("\nArray após realocação (primeira metade):\n");
-    for (i = 0; i < novo_tamanho; i++) {
-        printf("%d ", array[i]);
+    printf("\nArray apÃ³s realocaÃ§Ã£o (primeira metade):\n");
+    for (j = 0; j < novo_tam; j++) {
+        printf("%d ", a[j]);
     }
     printf("\n");
 
-    // Liberação da memória
-    free(array);
+    free(a);
 
     return 0;
 }
